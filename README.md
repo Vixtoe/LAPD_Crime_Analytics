@@ -9,7 +9,7 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 ---
 
 ## Quick Links
-* **[View Phase 1: Presentation Slides (PDF)](https://github.com/Vixtoe/LAPD_Crime_Analytics/blob/main/Cn340_LAPD.pdf)**
+* **[View Presentation Deck (PDF)](https://github.com/Vixtoe/LAPD_Crime_Analytics/raw/main/Cn340_LAPD.pdf)**
 * **[View Phase 1: EDA & Feature Enrichment (Webpage)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)**
 * **[View Phase 2: PySpark Distributed Modeling (Notebook)](https://github.com/Vixtoe/LAPD_Crime_Analytics/blob/main/02_pyspark_distributed_modeling.ipynb)**
 * **[Browse Repository Files](https://github.com/Vixtoe/LAPD_Crime_Analytics)**
