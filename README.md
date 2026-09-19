@@ -1,6 +1,6 @@
 # LAPD Crime Analytics & Distributed Predictive Pipeline
 
-[![Live Preview](https://img.shields.io/badge/Rendered_Notebook-View_HTML-brightgreen?style=for-the-badge&logo=github)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)
+[![Live Preview](https://img.shields.io/badge/Rendered_Notebooks-View_HTML-brightgreen?style=for-the-badge&logo=github)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)
 [![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=for-the-badge&logo=apachespark)](https://spark.apache.org/)
 [![XGBoost](https://img.shields.io/badge/Model-XGBoost_Regressor-blue?style=for-the-badge)](https://xgboost.readthedocs.io/)
 
@@ -9,7 +9,8 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 ---
 
 ## Quick Links
-* **[View Full Rendered EDA & Notebook Webpage](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)**
+* **[View Phase 1: EDA & Feature Engineering Webpage](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)**
+* **[View Phase 2: PySpark Distributed Modeling Webpage](https://Vixtoe.github.io/LAPD_Crime_Analytics/02_pyspark_distributed_modeling.html)**
 * **[Browse Repository Files](https://github.com/Vixtoe/LAPD_Crime_Analytics)**
 
 ---
@@ -38,3 +39,4 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 * `01_eda_and_feature_engineering.ipynb` — Data cleaning, visualization, and baseline modeling.
 * `01_eda_and_feature_engineering.html` — Standalone HTML report of Phase 1.
 * `02_pyspark_distributed_modeling.ipynb` — Distributed feature vectorization and PySpark XGBoost training.
+* `02_pyspark_distributed_modeling.html` — Standalone HTML report of Phase 2.
