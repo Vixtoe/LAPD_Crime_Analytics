@@ -3,7 +3,6 @@
 [![Live Preview](https://img.shields.io/badge/Rendered_Notebook-View_HTML-brightgreen?style=for-the-badge&logo=github)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)
 [![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=for-the-badge&logo=apachespark)](https://spark.apache.org/)
 [![XGBoost](https://img.shields.io/badge/Model-XGBoost_Regressor-blue?style=for-the-badge)](https://xgboost.readthedocs.io/)
-[![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://github.com/Vixtoe/LAPD_Crime_Analytics)
 
 An end-to-end data engineering and predictive modeling project analyzing ~1 million LAPD crime records (2020–2025). This project spans initial exploratory data analysis and feature enrichment all the way to a distributed big data pipeline ready for enterprise cloud deployment.
 
@@ -32,10 +31,10 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 * **Feature Engineering:** Merged daily LAX weather data (NOAA API) and US federal holidays to capture environmental impacts on incident density.
 * **Target Encoding:** Built leakage-free historical area baselines using strictly pre-2023 data.
 
-### Phase 2: Distributed Cloud Scaling & BI Integration (PySpark, Power BI)
+### Phase 2: Distributed Cloud Scaling (PySpark)
 * **Big Data Architecture:** Translated the analytical logic into a distributed PySpark pipeline for handling multi-terabyte scale.
 * **Model Training:** Trained a distributed PySpark XGBoost Regressor (`xgboost.spark`) to forecast incident density across 6-hour patrol windows per LAPD division.
-* **Power BI & Production Readiness:** Exported prediction outputs and historical baselines as Parquet files, optimized for downstream Power BI reporting (operational patrol heatmaps) and Databricks cloud deployment.
+* **Production Readiness:** Exported the final engineered datasets as Parquet files, optimized for downstream enterprise consumption and Databricks cloud deployment.
 ---
 
 ## Key Results
