@@ -10,7 +10,7 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 
 ## Quick Links
 * **[View Phase 1: EDA & Feature Engineering Webpage](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)**
-* **[View Phase 2: PySpark Distributed Modeling Webpage](https://Vixtoe.github.io/LAPD_Crime_Analytics/02_pyspark_distributed_modeling.html)**
+* **[View Phase 2: PySpark Distributed Modeling Webpage](https://Vixtoe.github.io/LAPD_Crime_Analytics/02_pyspark_distributed_modeling.ipnyb)**
 
 ---
 
