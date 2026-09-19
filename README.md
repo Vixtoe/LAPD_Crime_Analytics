@@ -31,11 +31,10 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 * **Feature Engineering:** Merged daily LAX weather data (NOAA API) and US federal holidays to capture environmental impacts on incident density.
 * **Target Encoding:** Built leakage-free historical area baselines using strictly pre-2023 data.
 
-### Phase 2: Distributed Cloud Scaling (PySpark)
+### Phase 2: Distributed Cloud Scaling & BI Integration (PySpark, Power BI)
 * **Big Data Architecture:** Translated the analytical logic into a distributed PySpark pipeline for handling multi-terabyte scale.
 * **Model Training:** Trained a distributed PySpark XGBoost Regressor (`xgboost.spark`) to forecast incident density across 6-hour patrol windows per LAPD division.
-* **Production Readiness:** Exported the final engineered datasets as Parquet files, optimized for downstream BI tools (Power BI) and Databricks.
-
+* **Power BI & Production Readiness:** Exported prediction outputs and historical baselines as Parquet files, optimized for downstream Power BI reporting (operational patrol heatmaps) and Databricks cloud deployment.
 ---
 
 ## Key Results
