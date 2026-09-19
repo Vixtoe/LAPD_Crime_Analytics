@@ -3,6 +3,7 @@
 [![Live Preview](https://img.shields.io/badge/Rendered_Notebook-View_HTML-brightgreen?style=for-the-badge&logo=github)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)
 [![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=for-the-badge&logo=apachespark)](https://spark.apache.org/)
 [![XGBoost](https://img.shields.io/badge/Model-XGBoost_Regressor-blue?style=for-the-badge)](https://xgboost.readthedocs.io/)
+[![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://github.com/Vixtoe/LAPD_Crime_Analytics)
 
 An end-to-end data engineering and predictive modeling project analyzing ~1 million LAPD crime records (2020–2025). This project spans initial exploratory data analysis and feature enrichment all the way to a distributed big data pipeline ready for enterprise cloud deployment.
 
