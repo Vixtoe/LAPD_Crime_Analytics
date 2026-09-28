@@ -19,7 +19,7 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 ## Repository Contents
 * `LAPD_Crime_Prediction.pdf` — Executive presentation deck summarizing project goals, data cleaning, and model evaluation.
 * `01_eda_and_feature_engineering.ipynb` — Data cleaning, visualization, and baseline modeling.
-* `01_eda_and_feature_engineering.html` — Standalone HTML report of Phase 1.
+* `01_eda_and_feature_engineering.ipynb` — Standalone report of Phase 1.
 * `02_pyspark_distributed_modeling.ipynb` — Distributed feature vectorization and PySpark XGBoost training.
 
 ---
