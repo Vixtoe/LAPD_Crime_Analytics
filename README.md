@@ -1,4 +1,4 @@
-# LAPD Crime Analytics & Distributed Predictive Pipeline
+i# LAPD Crime Analytics & Distributed Predictive Pipeline
 
 [![Live Preview](https://img.shields.io/badge/Rendered_Notebook-View_HTML-brightgreen?style=for-the-badge&logo=github)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)
 [![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=for-the-badge&logo=apachespark)](https://spark.apache.org/)
@@ -45,5 +45,5 @@ An end-to-end data engineering and predictive modeling project analyzing ~1 mill
 
 ## Repository Contents
 * `01_eda_and_feature_engineering.ipynb` — Data cleaning, visualization, and baseline modeling.
-* `01_eda_and_feature_engineering.html` — Standalone HTML report of Phase 1.
+* `01_eda_and_feature_engineering.html` — Standalone Notebook report of Phase 1.
 * `02_pyspark_distributed_modeling.ipynb` — Distributed feature vectorization and PySpark XGBoost training.
