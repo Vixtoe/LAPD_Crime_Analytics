@@ -1,11 +1,15 @@
 # LAPD Crime Analytics & Distributed Predictive Pipeline
 
+[![Live Dashboard](https://img.shields.io/badge/Live_Dashboard-Launch_App-brightgreen?style=for-the-badge&logo=dash)](https://floppy-impalas-fly.loca.lt/)
+
 ![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=flat-square&logo=apachespark)
 ![Model](https://img.shields.io/badge/Model-XGBoost%20Regressor-blue?style=flat-square)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Dash%20%2F%20Plotly-green?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=flat-square&logo=python)
 
 An end-to-end data engineering and predictive modeling project analyzing **~1 million LAPD crime records (2020–2024)**. This project spans initial data cleaning and feature enrichment with PySpark all the way to an XGBoost regression model and an interactive Dash visualization web application.
+
+> **Note**: When opening the live dashboard via LocalTunnel, enter your host IP address password when prompted.
 
 ---
 
@@ -36,11 +40,14 @@ Evaluation performed on 2023 test data (7,056 spatio-temporal slices, mean actua
 ```text
 .
 ├── tests/
-│   └── test_etl.py             # PySpark transformations & parsing unit tests
-├── .gitignore                  # Excludes raw data, parquet outputs & pickles
-├── app.py                      # Dash & Plotly interactive web application
-├── etl.py                      # PySpark ETL & spatial-temporal aggregation
-├── model.py                    # XGBoost regressor, baseline evaluation & CSV export
-├── predictions_2023.csv        # Exported predictions for dashboard consumption
-├── README.md                   # Project documentation
-└── requirements.txt            # Python dependencies
+│   └── test_etl.py                    # PySpark transformations & parsing unit tests
+├── .gitignore                         # Excludes raw data, parquet outputs & pickles
+├── 01_eda_and_feature_engineering.ipynb # Jupyter/Colab exploratory analysis notebook
+├── 02_pyspark_distributed_modeling.ipynb# Jupyter/Colab PySpark modeling notebook
+├── app.py                             # Dash & Plotly interactive web application
+├── Cn340_LAPD_compressed.pdf          # Compressed project documentation report
+├── etl.py                             # PySpark ETL & spatial-temporal aggregation
+├── model.py                           # XGBoost regressor, baseline evaluation & CSV export
+├── predictions_2023.csv               # Exported predictions for dashboard consumption
+├── README.md                          # Project documentation
+└── requirements.txt                   # Python dependencies
