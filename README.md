@@ -1,49 +1,46 @@
-i# LAPD Crime Analytics & Distributed Predictive Pipeline
+# LAPD Crime Analytics & Distributed Predictive Pipeline
 
-[![Live Preview](https://img.shields.io/badge/Rendered_Notebook-View_HTML-brightgreen?style=for-the-badge&logo=github)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.html)
-[![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=for-the-badge&logo=apachespark)](https://spark.apache.org/)
-[![XGBoost](https://img.shields.io/badge/Model-XGBoost_Regressor-blue?style=for-the-badge)](https://xgboost.readthedocs.io/)
+![PySpark](https://img.shields.io/badge/PySpark-Distributed-orange?style=flat-square&logo=apachespark)
+![Model](https://img.shields.io/badge/Model-XGBoost%20Regressor-blue?style=flat-square)
+![Dashboard](https://img.shields.io/badge/Dashboard-Dash%20%2F%20Plotly-green?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=flat-square&logo=python)
 
-An end-to-end data engineering and predictive modeling project analyzing ~1 million LAPD crime records (2020–2025). This project spans initial exploratory data analysis and feature enrichment all the way to a distributed big data pipeline ready for enterprise cloud deployment.
-
----
-
-## Quick Links
-* **[View Presentation Deck (PDF)](https://media.githubusercontent.com/media/Vixtoe/LAPD_Crime_Analytics/main/Cn340_LAPD.pdf)**
-* **[View Phase 1: EDA & Feature Enrichment (Notebook)](https://Vixtoe.github.io/LAPD_Crime_Analytics/01_eda_and_feature_engineering.ipnynb)**
-* **[View Phase 2: PySpark Distributed Modeling (Notebook)](https://github.com/Vixtoe/LAPD_Crime_Analytics/blob/main/02_pyspark_distributed_modeling.ipynb)**
-* **[Browse Repository Files](https://github.com/Vixtoe/LAPD_Crime_Analytics)**
+An end-to-end data engineering and predictive modeling project analyzing **~1 million LAPD crime records (2020–2024)**. This project spans initial data cleaning and feature enrichment with PySpark all the way to an XGBoost regression model and an interactive Dash visualization web application.
 
 ---
 
-## Repository Contents
-* `LAPD_Crime_Prediction.pdf` — Executive presentation deck summarizing project goals, data cleaning, and model evaluation.
-* `01_eda_and_feature_engineering.ipynb` — Data cleaning, visualization, and baseline modeling.
-* `01_eda_and_feature_engineering.ipynb` — Standalone report of Phase 1.
-* `02_pyspark_distributed_modeling.ipynb` — Distributed feature vectorization and PySpark XGBoost training.
+## Executive Summary
+
+* **Data Volume Processed**: Ingested **1,004,847** raw incident records from Kaggle via `kagglehub`.
+* **Data Cleaning & Filtering**: Removed **102,792** non-physical crime entries (e.g., identity theft, fraud) to retain **902,055** physical crime events.
+* **Feature Engineering**: Created temporal features including `year`, `month`, `day_of_week`, `is_weekend`, and 6-hour discrete `hour_bucket` intervals.
+* **Model Performance**: The XGBoost Regressor achieved a **6.40 MAE** (crimes per slice) on 2023 test data, outperforming Baseline 1 by **36.89%** and Baseline 2 by **17.21%**.
+* **Deployment**: Served real-time dynamic slices and MAE evaluations via a background-threaded **Dash & Plotly** web application bridged with `localtunnel`.
 
 ---
 
-## Project Phases
+## Model Evaluation Results
 
-### Phase 1: Data Discovery & Feature Enrichment (Pandas, Matplotlib)
-* **Domain-Specific Cleaning:** Identified and dropped ~102k non-physical/virtual crimes (e.g., identity theft) to eliminate artificial 12:00 PM logging spikes and restore spatial-temporal accuracy.
-* **Feature Engineering:** Merged daily LAX weather data (NOAA API) and US federal holidays to capture environmental impacts on incident density.
-* **Target Encoding:** Built leakage-free historical area baselines using strictly pre-2023 data.
+Evaluation performed on 2023 test data (7,056 spatio-temporal slices, mean actual crime count: **29.63**):
 
-### Phase 2: Distributed Cloud Scaling (PySpark)
-* **Big Data Architecture:** Translated the analytical logic into a distributed PySpark pipeline for handling multi-terabyte scale.
-* **Model Training:** Trained a distributed PySpark XGBoost Regressor (`xgboost.spark`) to forecast incident density across 6-hour patrol windows per LAPD division.
-* **Production Readiness:** Exported the final engineered datasets as Parquet files, optimized for downstream enterprise consumption and Databricks cloud deployment.
----
-
-## Key Results
-* **Test MAE:** `6.73` (~22.7% relative error) evaluated on a strictly out-of-time 2023 test set.
-* **Primary Drivers:** Historical division baseline (`area_mean_crime`) and the 6-hour patrol window (`hour_bucket`) proved to be the strongest predictors.
+| Model / Baseline | MAE | MAE (% of Mean Actual) | Improvement vs. Baseline 1 | Improvement vs. Baseline 2 |
+| :--- | :---: | :---: | :---: | :---: |
+| **Baseline 1 (Area Mean)** | 10.13 | 34.20% | Benchmark | — |
+| **Baseline 2 (Previous Year)** | 7.73 | 26.07% | +23.77% | Benchmark |
+| **XGBoost Regressor** | **6.40** | **21.59%** | **+36.89%** | **+17.21%** |
 
 ---
 
-## Repository Contents
-* `01_eda_and_feature_engineering.ipynb` — Data cleaning, visualization, and baseline modeling.
-* `01_eda_and_feature_engineering.html` — Standalone Notebook report of Phase 1.
-* `02_pyspark_distributed_modeling.ipynb` — Distributed feature vectorization and PySpark XGBoost training.
+## 📂 Project Structure
+
+```text
+.
+├── tests/
+│   └── test_etl.py             # PySpark transformations & parsing unit tests
+├── .gitignore                  # Excludes raw data, parquet outputs & pickles
+├── app.py                      # Dash & Plotly interactive web application
+├── etl.py                      # PySpark ETL & spatial-temporal aggregation
+├── model.py                    # XGBoost regressor, baseline evaluation & CSV export
+├── predictions_2023.csv        # Exported predictions for dashboard consumption
+├── README.md                   # Project documentation
+└── requirements.txt            # Python dependencies
