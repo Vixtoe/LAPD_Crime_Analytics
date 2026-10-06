@@ -1,5 +1,3 @@
-import os
-import threading
 import dash
 from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
@@ -8,7 +6,6 @@ import pandas as pd
 from sklearn.metrics import mean_absolute_error
 
 df = pd.read_csv("predictions_2023.csv")
-
 HOUR_BUCKET_MAP = {0: "Night (00-05)", 1: "Morning (06-11)", 2: "Afternoon (12-17)", 3: "Evening (18-23)"}
 DAY_OF_WEEK_MAP = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
 
