@@ -13,7 +13,7 @@ An end-to-end data engineering and predictive modeling project analyzing **~1 mi
 
 ![Dashboard overview](dashboard_overview.png)
 
-![Dashboard with filters applied](dashboard_filtered.png)
+![Dashboard with filters applied](dashboard_filter.png)
 
 ---
 
