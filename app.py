@@ -1,3 +1,4 @@
+import os
 import dash
 from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
@@ -5,7 +6,10 @@ import plotly.express as px
 import pandas as pd
 from sklearn.metrics import mean_absolute_error
 
-df = pd.read_csv("predictions_2023.csv")
+# Load Data with Relative Pathing
+csv_path = os.path.join(os.path.dirname(__file__), "predictions_2023.csv")
+df = pd.read_csv(csv_path)
+
 HOUR_BUCKET_MAP = {0: "Night (00-05)", 1: "Morning (06-11)", 2: "Afternoon (12-17)", 3: "Evening (18-23)"}
 DAY_OF_WEEK_MAP = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
 
@@ -18,6 +22,7 @@ hour_buckets = list(HOUR_BUCKET_MAP.values())
 day_names = list(DAY_OF_WEEK_MAP.values())
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
+server = app.server
 
 app.layout = dbc.Container([
     html.H2("LAPD Crime Prediction Dashboard", className="my-3 text-primary fw-bold"),
@@ -60,4 +65,4 @@ def update_graphs(div, hour, day):
     return mae_str, fig_line, fig_bar
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8050, debug=False)
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
