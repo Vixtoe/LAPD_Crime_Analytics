@@ -34,6 +34,13 @@ Evaluation performed on 2023 test data (7,056 spatio-temporal slices, mean actua
 | **XGBoost Regressor** | **6.40** | **21.59%** | **+36.89%** | **+17.21%** |
 
 ---
+## ⚠️ Limitations
+
+* **Under-prediction bias**: On 2023 data the model predicts lower than actual counts on average (mean error: X.XX crimes per slice). The area-mean feature is computed from 2020–2022, and 2023 volume was higher.
+* **Coarse target**: Each row is a crime count per division, month, weekday and 6-hour block, not a daily or per-incident prediction.
+* **Features**: Calendar and division-level features only; no weather, events or location within a division.
+* **Incomplete final year**: 2024 data is partial, so it is excluded from training and evaluation.
+---
 
 ## 📂 Project Structure
 
