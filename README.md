@@ -11,8 +11,9 @@ An end-to-end data engineering and predictive modeling project analyzing **~1 mi
 
 > **Note**: The dashboard is hosted on Render's free tier. If it has been inactive, the server sleeps and the first load can take up to **50-60 seconds**. After that, interactions are instant.
 
-![Dashboard overview](docs/dashboard_overview.png)
-<!-- Add 2-3 screenshots to a docs/ folder and update the paths -->
+![Dashboard overview](dashboard_overview.png)
+
+![Dashboard with filters applied](dashboard_filtered.png)
 
 ---
 
@@ -64,12 +65,12 @@ ETL and model training require PySpark and XGBoost. See `etl.py`, `model.py` and
 .
 |-- tests/
 |   `-- test_etl.py                     # PySpark transformation and parsing unit tests
-|-- docs/
-|   `-- dashboard_overview.png          # Dashboard screenshots
 |-- .gitignore                          # Excludes raw data, parquet outputs and pickles
 |-- 01_eda_and_feature_engineering.ipynb
 |-- 02_pyspark_modeling.ipynb
 |-- app.py                              # Production Dash web application (Flask server)
+|-- dashboard_overview.png              # README screenshot
+|-- dashboard_filtered.png              # README screenshot
 |-- etl.py                              # PySpark ETL and spatial-temporal aggregation
 |-- model.py                            # XGBoost regressor, baseline evaluation, CSV export
 |-- predictions_2023.csv                # Pre-computed model outputs for the dashboard
