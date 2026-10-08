@@ -39,15 +39,6 @@ Time-based split: trained on 2020-2022, tested on 2023 (7,056 division/time slic
 
 ---
 
-## Limitations
-
-* **Under-prediction bias**: On 2023 data the model predicts lower than actual counts on average (mean error: **[X.XX]** crimes per slice). [Add your confirmed explanation here, e.g. 2023 volume compared with the 2020-2022 training mean.]
-* **Coarse target**: Each row is a crime count per division, month, weekday and 6-hour block. It is not a daily or per-incident prediction.
-* **Limited features**: Calendar and division-level features only; no weather, local events or location within a division.
-* **Incomplete final year**: [Confirm against model.py: 2024 data is partial and is excluded from training and evaluation.]
-
----
-
 ## Run Locally
 
 ```bash
